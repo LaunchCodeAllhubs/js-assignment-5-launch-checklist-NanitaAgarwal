@@ -1,22 +1,22 @@
 // Write your JavaScript code here!
 window.addEventListener("load", function() {
-    let form = document.querySelector("form");
     // let form = document.getElementById("launchForm");
-    form.addEventListener("submit",function(event) {
+    let form = document.querySelector("form");
+    // let pilotStatus=document.getElementById("pilotStatus");
+    // let copilotStatus=document.getElementById("copilotStatus");
+    // let fuelStatus=document.getElementById("fuelStatus");
+    // let cargoStatus=document.getElementById("cargoStatus");
+    // let faultyItems=document.getElementById("faultyItems");
+    // let launchStatus=document.getElementById("launchStatus");
+form.addEventListener("submit",function(event) {
         // alert("Submit Clicked");
         let pilotName=document.querySelector("input[name=pilotName]");
         let copilotName=document.querySelector("input[name=copilotName]");
         let fuelLevel=document.querySelector("input[name=fuelLevel]");
         let cargoMass=document.querySelector("input[name=cargoMass]");
-        let pilotStatus=document.getElementById("pilotStatus");
-        let copilotStatus=document.getElementById("copilotStatus");
-        let fuelStatus=document.getElementById("fuelStatus");
-        let cargoStatus=document.getElementById("cargoStatus");
-        let faultyItems=document.getElementById("faultyItems");
-        let launchStatus=document.getElementById("launchStatus");
         event.preventDefault();
-        // console.log(`Window.document: ${Window.document()}`);
-        formSubmission(launchStatus, faultyItems, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value)
+        // formSubmission(launchStatus, faultyItems, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value)
+        formSubmission(document, faultyItems, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value)
     })
 
     let listedPlanets;

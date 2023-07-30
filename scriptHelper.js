@@ -26,37 +26,37 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    launchStatus = document.getElementById("launchStatus");
     if(!pilot||!copilot||!fuelLevel||!cargoLevel) {
         alert("All fields are required!");
-        document.innerHTML=`Awaiting Information Before Launch`;
-        document.style.color="#15141A";
+        launchStatus.innerHTML=`Awaiting Information Before Launch`;
+        launchStatus.style.color="#15141A";
         list.style.visibility="hidden";
     } else if (validateInput(pilot) !== "Not a Number" ||
                validateInput(copilot) !== "Not a Number" ||
                validateInput(fuelLevel) !== "Is a Number" ||
                validateInput(cargoLevel) !== "Is a Number") {
             alert("Make sure to enter valid information for each field!")
-            document.innerHTML=`Awaiting Information Before Launch`;
-            document.style.color="#15141A";
+            launchStatus.innerHTML=`Awaiting Information Before Launch`;
+            launchStatus.style.color="#15141A";
             list.style.visibility="hidden";
     } else {
         list.style.visibility="visible";
         pilotStatus.innerHTML=`Pilot ${pilot} is ready for launch`;  
         copilotStatus.innerHTML=`Copilot ${copilot} is ready for launch`;
-        document.innerHTML=`Shuttle Ready For Launch`;
-        document.style.color="#419F6A";
+        launchStatus.innerHTML=`Shuttle Ready For Launch`;
+        launchStatus.style.color="#419F6A";
         if (fuelLevel<10000) {
             fuelStatus.innerHTML=`Fuel level too low for launch`;
-            document.innerHTML=`Shuttle not ready for launch`;
-            document.style.color="red";
-        }
+            launchStatus.innerHTML=`Shuttle not ready for launch`;
+            launchStatus.style.color="red";        }
         else {
             fuelStatus.innerHTML=`Fuel level high enough for launch`
         }
         if (cargoLevel>10000) {
             cargoStatus.innerHTML=`Cargo mass too heavy for launch`;
-            document.innerHTML=`Shuttle not ready for launch`;
-            document.style.color="rgb(199, 37, 78)";
+            launchStatus.innerHTML=`Shuttle not ready for launch`;
+            launchStatus.style.color="rgb(199, 37, 78)";
         } else {
             cargoStatus.innerHTML=`Cargo mass low enough for launch`;
         }
@@ -69,7 +69,7 @@ async function myFetch() {
     await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
         planetsReturned = response.json();
     });
-    // console.log(`planetsReturned: ${planetsReturned}`);
+    console.log(`planetsReturned: ${planetsReturned}`);
 
     return planetsReturned;
 }
