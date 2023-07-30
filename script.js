@@ -22,7 +22,7 @@ form.addEventListener("submit",function(event) {
     })
 
     let listedPlanets;
-    let missionTarget=document.getElementById("missionTarget");
+    // let missionTarget=document.getElementById("missionTarget");
 
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse;
@@ -35,6 +35,7 @@ form.addEventListener("submit",function(event) {
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
         let selectedPlanet= pickPlanet(listedPlanets);
         console.log(selectedPlanet);
-        addDestinationInfo(missionTarget,selectedPlanet.name,selectedPlanet.diameter, selectedPlanet.star, selectedPlanet.distance, selectedPlanet.moons, selectedPlanet.image)
+        // addDestinationInfo(missionTarget, selectedPlanet.name, selectedPlanet.diameter, selectedPlanet.star, selectedPlanet.distance, selectedPlanet.moons, selectedPlanet.image)
+        addDestinationInfo(document, selectedPlanet.name, selectedPlanet.diameter, selectedPlanet.star, selectedPlanet.distance, selectedPlanet.moons, selectedPlanet.image)
     })
 });
