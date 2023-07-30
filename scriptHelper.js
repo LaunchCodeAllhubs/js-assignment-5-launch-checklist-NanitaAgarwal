@@ -26,7 +26,11 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    launchStatus = document.getElementById("launchStatus");
+    let launchStatus = document.getElementById("launchStatus");
+    let pilotStatus=document.getElementById("pilotStatus");
+    let copilotStatus=document.getElementById("copilotStatus");
+    let fuelStatus=document.getElementById("fuelStatus");
+    let cargoStatus=document.getElementById("cargoStatus");
     if(!pilot||!copilot||!fuelLevel||!cargoLevel) {
         alert("All fields are required!");
         launchStatus.innerHTML=`Awaiting Information Before Launch`;
