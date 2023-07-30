@@ -17,6 +17,8 @@ form.addEventListener("submit",function(event) {
         event.preventDefault();
         // formSubmission(launchStatus, faultyItems, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value)
         formSubmission(document, faultyItems, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value)
+        // formSubmission(document, faultyItems, pilotName.value, copilotName.value, 0, cargoMass.value)
+        // formSubmission(document, faultyItems, pilotName.value, copilotName.value, fuelLevel.value, 0)
     })
 
     let listedPlanets;
